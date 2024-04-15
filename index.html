@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- METADATAS -->
+  <meta charset="UTF-8">
+  <meta name="author" content="Kauan Gabriel">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- JS - CHART.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- TITLE -->
+  <title>DashBoard - Chart.js</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="content">
+
+      <h1>Gráficos de Temperatura e Umidade</h1>
+
+      <div class="graficos">
+
+        <div>
+          <canvas id="line"></canvas>
+        </div>
+
+        <div>
+          <canvas id="bar"></canvas>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const ctx = document.getElementById('line');
+  const ctx2 = document.getElementById('bar');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'junho'],
+      datasets: [{
+        label: 'Temperatura Média',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1
+      }, {
+        label: 'Umidade Média',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 2
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [30, 29, 28, 25, 22, 23],
+        borderWidth: 1
+      }, {
+        label: 'Umidade',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 2
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
