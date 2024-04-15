@@ -1,7 +1,7 @@
 <h1 align="center">SPTECH-Chart.js</h1>
 
 <p align="center">
-  <img src="sptech2.png" width="500">
+  <img src="sptech.png" width="500">
 </p>
 
 #
